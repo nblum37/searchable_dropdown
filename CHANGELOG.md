@@ -1,3 +1,4 @@
+* Added an item update function to the dropdownSearch state (can be used to update the items while the popup is open)
 * Added the following properties to the class `DropDownDecoratorProps`:
   
   - `searchSplashColor`
