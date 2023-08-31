@@ -646,6 +646,14 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
     deselectItems(_cachedItems);
   }
 
+  void updateItems(List<T> items) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _cachedItems.clear();
+      _cachedItems.addAll(items);
+      _manageItemsByFilter(searchBoxController.text);
+    });
+  }
+
   bool get isAllItemSelected => _selectedItems.length >= _currentShowedItems.length;
 
   List<T> get getSelectedItem => List.from(_selectedItems);

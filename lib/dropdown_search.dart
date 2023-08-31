@@ -860,6 +860,10 @@ class DropdownSearchState<T> extends State<DropdownSearch<T>> {
   ///close dropdownSearch popup if it's open
   void closeDropDownSearch() => _popupStateKey.currentState?.closePopup();
 
+  ///close dropdownSearch popup if it's open
+  void updateItems(List<T> items) =>
+      _popupStateKey.currentState?.updateItems(items);
+
   ///returns true if all popup's items are selected; other wise False
   bool get popupIsAllItemSelected =>
       _popupStateKey.currentState?.isAllItemSelected ?? false;
